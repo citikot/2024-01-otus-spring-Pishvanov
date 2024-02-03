@@ -1,4 +1,4 @@
-package ru.otus.hw.exceptions;
+package ru.otus.spring.hw1.exceptions;
 
 public class QuestionReadException extends RuntimeException {
     public QuestionReadException(String message, Throwable ex) {
