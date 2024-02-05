@@ -7,7 +7,11 @@
         http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
     <bean id="appProperties" class="ru.otus.spring.hw1.config.AppProperties">
-        <constructor-arg index="0" value="/questions.csv" />
+        <property name="testFileName" value="questions.csv" />
+    </bean>
+
+    <bean id="dao" class="ru.otus.spring.hw1.dao.CsvQuestionDao">
+        <constructor-arg ref="appProperties" />
     </bean>
 
     <bean id="ioService" class="ru.otus.spring.hw1.service.StreamsIOService">
@@ -17,11 +21,12 @@
     </bean>
 
     <bean id="testService" class="ru.otus.spring.hw1.service.TestServiceImpl">
-        <constructor-arg index="0" ref="ioService" />
+        <property name="ioService" ref="ioService" />
+        <property name="dao" ref="dao" />
     </bean>
 
     <bean id="testRunnerService" class="ru.otus.spring.hw1.service.TestRunnerServiceImpl">
-        <constructor-arg index="0" ref="testService" />
+        <constructor-arg ref="testService" />
     </bean>
 
 </beans>
