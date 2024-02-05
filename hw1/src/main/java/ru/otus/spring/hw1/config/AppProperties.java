@@ -1,9 +1,9 @@
 package ru.otus.spring.hw1.config;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class AppProperties implements TestFileNameProvider {
     private String testFileName;
@@ -14,4 +14,5 @@ public class AppProperties implements TestFileNameProvider {
     }
 
 }
+
 
