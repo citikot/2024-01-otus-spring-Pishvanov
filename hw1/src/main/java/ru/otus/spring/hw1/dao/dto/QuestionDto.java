@@ -12,14 +12,15 @@ import java.util.List;
 @Data
 public class QuestionDto {
 
-    @CsvBindByPosition(position = 0)
+    @CsvBindByPosition(position = 0, required = true)
     private String text;
 
-    @CsvBindAndSplitByPosition(position = 1, collectionType = ArrayList.class, elementType = Answer.class,
-            converter = AnswerCsvConverter.class, splitOn = "\\|")
+    @CsvBindAndSplitByPosition(position = 1, elementType = Answer.class, collectionType = ArrayList.class,
+            splitOn = "\\|", converter = AnswerCsvConverter.class)
     private List<Answer> answers;
 
     public Question toDomainObject() {
         return new Question(text, answers);
     }
+
 }

@@ -20,13 +20,14 @@ public class TestServiceImpl implements TestService {
         ioService.printLine("");
         ioService.printFormattedLine("Please answer the questions below:%n");
 
-        List<Question> testData = dao.findAll();
-        printTestData(testData);
+        List<Question> allTestData = dao.findAll();
+        printAllTestData(allTestData);
 
     }
 
-    public void printTestData(List<Question> testData) {
-
+    // TODO refactor after main issue resolving
+    public void printAllTestData(List<Question> testData) {
+        testData.forEach((e) -> ioService.printFormattedLine(e.text(), e.answers()));
     }
 
 }

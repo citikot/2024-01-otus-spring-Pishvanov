@@ -6,7 +6,6 @@ public class StreamsIOService implements IOService {
     private final PrintStream printStream;
 
     public StreamsIOService(PrintStream printStream) {
-
         this.printStream = printStream;
     }
 
@@ -19,4 +18,5 @@ public class StreamsIOService implements IOService {
     public void printFormattedLine(String s, Object... args) {
         printStream.printf(s + "%n", args);
     }
+
 }
