@@ -4,7 +4,10 @@ import ru.otus.spring.hw1.exceptions.QuestionReadException;
 
 import java.io.InputStream;
 
-public class GetFileFromResourceAsStream {
+public final class GetFileFromResourceAsStream {
+
+    private GetFileFromResourceAsStream() {
+    }
 
     public static InputStream get(String fileName) {
         try {
