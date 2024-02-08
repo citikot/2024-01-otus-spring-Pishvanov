@@ -22,9 +22,20 @@ public class TestServiceImpl implements TestService {
 
         List<Question> allTestData = dao.findAll();
 
-        // TODO may need to be sent to dedicated method after resolution of the main issue
-        allTestData.forEach((e) -> ioService.printFormattedLine(e.text(), e.answers()));
+        allTestData.forEach(this::printQuestionAndAnswers);
 
+    }
+
+    private void printQuestionAndAnswers (Question question) {
+        final int[] counter = {1};
+        ioService.printLine("");
+        ioService.printLine(question.text());
+        question.answers().forEach((e) -> {
+            ioService.printLine("Answer " + String.valueOf(counter[0]));
+            ioService.printFormattedLine(e.text());
+            ioService.printLine("Is it correct? " + String.valueOf(e.isCorrect()));
+            counter[0]++;
+        });
     }
 
 }

@@ -39,10 +39,6 @@ public class CsvQuestionDao implements QuestionDao {
                     .withType(QuestionDto.class)
                     .build()
                     .parse();
-
-            // TODO remove after debug
-            questionDtoList.forEach(System.out::println);
-
             questionDtoList.forEach((e) -> questionList.add(e.toDomainObject()));
         } catch (RuntimeException | IOException e) {
             throw new QuestionReadException("CSV processing error", e);

@@ -30,7 +30,7 @@
             https://raw.githubusercontent.com/OtusTeam/Spring/master/checkstyle.xml
         </checkstyle.config.url>
         <maven-shade-plugin.version>3.5.1</maven-shade-plugin.version>
-        <start-class>Application.java</start-class>
+        <start-class>ru.otus.spring.hw1.Application</start-class>
     </properties>
     <dependencies>
         <dependency>
