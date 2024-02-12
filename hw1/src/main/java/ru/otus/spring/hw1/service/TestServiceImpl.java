@@ -1,19 +1,20 @@
 package ru.otus.spring.hw1.service;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import ru.otus.spring.hw1.dao.QuestionDao;
+import ru.otus.spring.hw1.domain.Answer;
 import ru.otus.spring.hw1.domain.Question;
 
+import java.io.FileNotFoundException;
 import java.util.List;
+import java.util.ListIterator;
 
-@NoArgsConstructor
-@Data
+@RequiredArgsConstructor
 public class TestServiceImpl implements TestService {
 
-    private IOService ioService;
+    private final IOService ioService;
 
-    private QuestionDao dao;
+    private final QuestionDao dao;
 
     @Override
     public void executeTest() {
@@ -21,21 +22,19 @@ public class TestServiceImpl implements TestService {
         ioService.printFormattedLine("Please answer the questions below:%n");
 
         List<Question> allTestData = dao.findAll();
-
         allTestData.forEach(this::printQuestionAndAnswers);
 
     }
 
     private void printQuestionAndAnswers (Question question) {
-        final int[] counter = {1};
         ioService.printLine("");
         ioService.printLine(question.text());
-        question.answers().forEach((e) -> {
-            ioService.printLine("Answer " + String.valueOf(counter[0]));
-            ioService.printFormattedLine(e.text());
-            ioService.printLine("Is it correct? " + String.valueOf(e.isCorrect()));
-            counter[0]++;
-        });
+
+        for (int i = 0; i < question.answers().size(); i++) {
+            ioService.printLine("Answer " + (i + 1));
+            ioService.printFormattedLine(question.answers().get(i).text());
+            ioService.printLine("Is it correct? " + question.answers().get(i).isCorrect());
+        }
     }
 
 }

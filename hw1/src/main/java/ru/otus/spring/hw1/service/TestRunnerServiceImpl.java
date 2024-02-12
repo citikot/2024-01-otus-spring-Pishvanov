@@ -1,10 +1,8 @@
 package ru.otus.spring.hw1.service;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
-@AllArgsConstructor
-@Data
+@RequiredArgsConstructor
 public class TestRunnerServiceImpl implements TestRunnerService {
     private final TestService testService;
 

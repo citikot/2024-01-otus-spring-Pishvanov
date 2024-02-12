@@ -6,15 +6,17 @@ import com.opencsv.bean.CsvToBeanBuilder;
 import lombok.AllArgsConstructor;
 import ru.otus.spring.hw1.config.TestFileNameProvider;
 import ru.otus.spring.hw1.dao.dto.QuestionDto;
-import ru.otus.spring.hw1.dao.utils.GetFileFromResourceAsStream;
+import ru.otus.spring.hw1.dao.helper.ResourceHelper;
 import ru.otus.spring.hw1.domain.Question;
 import ru.otus.spring.hw1.exceptions.QuestionReadException;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 public class CsvQuestionDao implements QuestionDao {
@@ -30,18 +32,18 @@ public class CsvQuestionDao implements QuestionDao {
 
         final String testQuestionsFileName = fileNameProvider.getTestFileName();
 
-        List<Question> questionList = new ArrayList<>();
+        List<Question> questionList;
 
-        InputStream is = GetFileFromResourceAsStream.get(testQuestionsFileName);
+        InputStream is = ResourceHelper.openResourceAsStream(testQuestionsFileName);
 
         try (CSVReader csvReader = new CSVReaderBuilder(new InputStreamReader(is)).withSkipLines(1).build()) {
             List<QuestionDto> questionDtoList = new CsvToBeanBuilder<QuestionDto>(csvReader)
                     .withType(QuestionDto.class)
                     .build()
                     .parse();
-            questionDtoList.forEach((e) -> questionList.add(e.toDomainObject()));
+            questionList = questionDtoList.stream().map(QuestionDto::toDomainObject).collect(Collectors.toList());
         } catch (RuntimeException | IOException e) {
-            throw new QuestionReadException("CSV processing error", e);
+            throw new QuestionReadException("CSV file processing error or file not found!", e);
         }
         return questionList;
     }

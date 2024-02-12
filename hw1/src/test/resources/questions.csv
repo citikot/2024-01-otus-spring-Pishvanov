@@ -1,9 +1,0 @@
-# Добавить сюда своих вопросов. Эту строку надо пропустить при настройке CsvToBean (withSkipLines)
-Is there life on Mars?;Science doesn't know this yet%true|Certainly. The red UFO is from Mars. And green is from Venus%false|Absolutely not%false
-How should resources be loaded form jar in Java?;ClassLoader#getResourceAsStream or ClassPathResource#getInputStream%true|ClassLoader#getResource#getFile + FileReader%false|Wingardium Leviosa%false
-Which option is a good way to handle the exception?;@SneakyThrow%false|e.printStackTrace()%false|Rethrow with wrapping in business exception (for example, QuestionReadException)%true|Ignoring exception%false
-How is an ArrayList initialized in Java?;ArrayList<String> list = new ArrayList<>()%true|List<String> list = new List<>()%false|ArrayList list = new ArrayList()%false|ArrayList<String> list = new ArrayList<String>()%false
-What is the purpose of the "static" keyword in Java?;It indicates that a variable or method belongs to the class, not the instance.%true|It makes a variable or method non-modifiable.%false|It is used to create dynamic variables.%false|It ensures that a variable or method is accessible only within the same package.%false
-How do you declare an interface in Java?;interface MyInterface {%true|interface MyInterfaceDeclaration {}%false|class MyInterface {}%false|interface MyInterface = {}%false|new interface MyInterface {}%false
-What is the purpose of the "super" keyword in Java?;It is used to call the superclass methods or constructors.%true|It represents an instance of the current class.%false|It is used to access the static members of a class.%false|It is used to declare a super variable.%false
-How do you handle exceptions in Java?;Using try-catch blocks to catch and handle exceptions.%true|By ignoring them to let the program crash.%false|By using the "throw" statement to propagate exceptions.%false|Exceptions are automatically handled by the Java Virtual Machine (JVM).%false
