@@ -2,12 +2,9 @@ package ru.otus.spring.hw1.service;
 
 import lombok.RequiredArgsConstructor;
 import ru.otus.spring.hw1.dao.QuestionDao;
-import ru.otus.spring.hw1.domain.Answer;
 import ru.otus.spring.hw1.domain.Question;
 
-import java.io.FileNotFoundException;
 import java.util.List;
-import java.util.ListIterator;
 
 @RequiredArgsConstructor
 public class TestServiceImpl implements TestService {
