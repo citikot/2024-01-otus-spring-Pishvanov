@@ -1,10 +1,8 @@
 package ru.otus.hw2.dao.helper;
 
-import lombok.NoArgsConstructor;
-
 import java.io.InputStream;
 
-@NoArgsConstructor
+@SuppressWarnings("java:S1118")
 public final class ResourceHelper {
 
     public static InputStream openResourceAsStream(String resourceName) {
