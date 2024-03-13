@@ -1,7 +1,5 @@
 package ru.otus.hw2.service;
 
-import org.springframework.beans.factory.annotation.Value;
-
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
@@ -13,8 +11,7 @@ public class StreamsIOService implements IOService {
 
     private final Scanner scanner;
 
-    public StreamsIOService(@Value("#{T(System).out}") PrintStream printStream,
-                            @Value("#{T(System).in}") InputStream inputStream) {
+    public StreamsIOService(PrintStream printStream, InputStream inputStream) {
         this.printStream = printStream;
         this.scanner = new Scanner(inputStream);
     }

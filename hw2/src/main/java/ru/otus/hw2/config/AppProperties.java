@@ -2,13 +2,10 @@ package ru.otus.hw2.config;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import ru.otus.hw2.service.IOService;
-import ru.otus.hw2.service.StreamsIOService;
+import org.springframework.stereotype.Component;
 
 @Data
-@Configuration
+@Component
 public class AppProperties implements TestConfig, TestFileNameProvider {
 
     @Value("${test.rightAnswersCountToPass}")
@@ -16,11 +13,6 @@ public class AppProperties implements TestConfig, TestFileNameProvider {
 
     @Value("${test.fileName}")
     private String testFileName;
-
-    @Bean
-    public IOService ioService() {
-        return new StreamsIOService(System.out, System.in);
-    }
 
     @Override
     public String getTestFileName() {

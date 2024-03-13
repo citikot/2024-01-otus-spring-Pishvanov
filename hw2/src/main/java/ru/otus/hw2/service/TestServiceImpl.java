@@ -11,13 +11,13 @@ import ru.otus.hw2.domain.TestResult;
 @AllArgsConstructor
 public class TestServiceImpl implements TestService {
 
+    private static final String ANSWER_PROMPT = "Please, enter the number of correct answer: ";
+
+    private static final String ERROR_MESSAGE = "The number should be within the range. Please, try again.";
+
     private final IOService ioService;
 
     private final QuestionDao questionDao;
-
-    private final String answerPrompt = "Please, enter the number of correct answer: ";
-
-    private final String errorMessage = "The number should be within the range. Please, try again.";
 
     @Override
     public TestResult executeTestFor(Student student) {
@@ -49,7 +49,7 @@ public class TestServiceImpl implements TestService {
         }
 
         int receivedAnswer = ioService.readIntForRangeWithPrompt(1, question.answers().size(),
-                                                                answerPrompt, errorMessage);
+                                                                ANSWER_PROMPT, ERROR_MESSAGE);
 
         return validAnswer == receivedAnswer;
 
