@@ -1,9 +1,9 @@
-package ru.otus.hw.service;
+package ru.otus.hw3.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.otus.hw.config.TestConfig;
-import ru.otus.hw.domain.TestResult;
+import ru.otus.hw3.config.TestConfig;
+import ru.otus.hw3.domain.TestResult;
 
 @Service
 @RequiredArgsConstructor

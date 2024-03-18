@@ -1,4 +1,10 @@
 # Добавить сюда своих вопросов. Эту строку надо пропустить при настройке CsvToBean (withSkipLines)
-Есть ли жизнь на Марсе?;Это науке пока не известно%true|Конечно. Красные (НЛО) это с Марса. А зеленые (НЛО) с Венеры%false|Точно нет%false
-Как нужно загружать ресурс из jar в Java?;ClassLoader#geResourceAsStream или ClassPathResource#getInputStream%true|ClassLoader#geResource#getFile + FileReader%false|Wingardium Leviosa%false
-Какой предпочтительный способ реакции на исключения?;@SneakyThrow%false|e.printStackTrace()%false|Проброс дальше с предварительным оборачиванием в бизнес-исключение (например, QuestionReadException)%true|Игнорирование исключения%false
+Есть ли жизнь на Марсе? Наука этого еще не знает% правда|Конечно. Красный НЛО прибыл с Марса. А зеленый — от Венеры%false|Абсолютно не%false
+Как следует загружать ресурсы из jar в Java?,ClassLoader#geResourceAsStream или ClassPathResource#getInputStream%true|ClassLoader#geResource#getFile + FileReader%false|Wingardium Leviosa%false
+Какова природа света?,Particle%false|Wave%false|И волна, и частица%true
+Какая самая большая планета в Солнечной системе?,Юпитер%true|Земля%false|Марс%false|Сатурн%false
+Известный код из Матрицы на самом деле означает?,Рецепт суши%true|уравнение, раскрывающее тайны Вселенной%false|выдержки из сочинений великих философов%false
+Кто автор саги о ведьмаке? Анджей Сапковский%true|Анджей Дуда%false
+В каком месяце 28 дней?,Ни один из них%false|в каждом%true|феврале%false
+Мюнхгаузен летал?,Ракета%false|Пушечное ядро%true|Нимбус 2000%false
+Можно ли создать машину времени?, Да%false|Нет%true|Она у меня в гараже%false

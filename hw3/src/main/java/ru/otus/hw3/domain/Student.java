@@ -1,4 +1,4 @@
-package ru.otus.hw.domain;
+package ru.otus.hw3.domain;
 
 public record Student(String firstName, String lastName) {
     public String getFullName() {

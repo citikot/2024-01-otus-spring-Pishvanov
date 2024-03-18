@@ -6,7 +6,7 @@ spring:
     # Если false то будут браться сообщения из дефолтного файла, если true, то из файла соответствующего системной локали
     fallbackToSystemLocale: false
 test:
-  rightAnswersCountToPass: 3
+  rightAnswersCountToPass: 5
   locale: en-US
   fileNameByLocaleTag:
     ru-RU: questions_ru.csv

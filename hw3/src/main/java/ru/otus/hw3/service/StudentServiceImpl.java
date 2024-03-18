@@ -1,8 +1,8 @@
-package ru.otus.hw.service;
+package ru.otus.hw3.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.otus.hw.domain.Student;
+import ru.otus.hw3.domain.Student;
 
 @Service
 @RequiredArgsConstructor

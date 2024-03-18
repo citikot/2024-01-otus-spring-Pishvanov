@@ -1,4 +1,4 @@
-package ru.otus.hw.domain;
+package ru.otus.hw3.domain;
 
 import java.util.List;
 
